@@ -8,12 +8,9 @@ app = Flask(__name__)
 @app.route('/website',methods=['POST'])
 @cross_origin()
 def website():
-    print("inside this function")
     searchString = request.json['searchString'].replace(" ","-")
     site_url = "https://www.pricedekho.com/mobiles/" + searchString + "-price-mp.html"
-    # site_url = "https://www.pricedekho.com/mobiles/apple-iphone-11-price-mp.html"
-    # print("########")
-    # print(site_url)
+
     r = requests.get(site_url)
     site_html = bs(r.content,"html5lib")
     content = site_html("table",{"class":"allvariant contentHold"})
