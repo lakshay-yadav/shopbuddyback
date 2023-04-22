@@ -1,2 +1,2 @@
-.find(id="wtb_deal_list")
-# print(n)
+":
+    app.run(debug=True)

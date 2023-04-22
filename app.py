@@ -10,7 +10,7 @@ import website
 
 app = Flask(__name__)
 
-@app.route('/webiste',methods=['POST'])
+@app.route('/website',methods=['POST'])
 @cross_origin()
 def websitescrap():
     return website.website()

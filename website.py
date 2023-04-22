@@ -26,9 +26,8 @@ def website():
             price = d.td.next_sibling.text
             link = d.td.next_sibling.next_sibling.a['href']
 
-        except Exception as e:
-            print("The exception is ", e)
-            return 'Something is wrong'
+        except:
+            pass
         
         dic = {"src":src,"price":price,"link":link}
         lis.append(dic)
