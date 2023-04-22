@@ -3,34 +3,32 @@ from flask_cors import CORS,cross_origin
 import requests
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
+import signup
+import signin
+import flipkart
+import website
 
 app = Flask(__name__)
 
-@app.route('/',methods=['GET'])
+@app.route('/webiste',methods=['POST'])
 @cross_origin()
-def homepage():
-    return render_template("index.html")
+def websitescrap():
+    return website.website()
 
-@app.route('/product',methods=['GET','POST'])
+@app.route('/signup',methods=['POST'])
 @cross_origin()
-def index():
-    if request.method == 'POST':
-        try:
-            searchString = request.form['content'].replace(" ","-")
-            site_url = "https://pricee.com/?q=" + searchString
-            uClient = uReq(site_url)
-            sitePage = uClient.read()
-            uClient.close()
-            site_html = bs(sitePage, "html.parser")
-            
+def signuproute():
+    return signup.signup()
 
-        except Exception as e:
-            print('The Exception message is: ',e)
-            return 'something is wrong'
+@app.route('/signin',methods=['POST'])
+@cross_origin()
+def signinroute():
+    return signin.signin()
 
-    else:
-        return render_template('index.html')
-    
+@app.route('/flipkart',methods=['POST'])
+@cross_origin()
+def flipkartscrap():
+    return flipkart.flipkart()
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,10 +3,10 @@ from flask_cors import cross_origin
 import requests
 from bs4 import BeautifulSoup as bs
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route('/flipkart',methods=['POST'])
-@cross_origin()
+# @app.route('/flipkart',methods=['POST'])
+# @cross_origin()
 def flipkart():
     searchString = request.json['searchString'].replace(" ","")
     flipkart_url = "https://www.flipkart.com/search?q=" + searchString
@@ -27,5 +27,5 @@ def flipkart():
         lis.append(dict)
     return (jsonify(lis))
 
-if __name__ == '__main__':
-    app.run(debug = True)
+# if __name__ == '__main__':
+#     app.run(debug = True)
