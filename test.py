@@ -3,13 +3,14 @@ from flask_cors import CORS,cross_origin
 import requests
 from bs4 import BeautifulSoup as bs
 
-# site_url = "https://www.pricedekho.com/mobiles/apple-iphone-11-128gb-price.html"
-# r = requests.get(site_url)
-# site_html = bs(r.content,"html5lib")
+
+site_url = "https://www.pricedekho.com/mobiles/apple-iphone-12-price.html"
+r = requests.get(site_url)
+site_html = bs(r.content,"html5lib")
 # # print(site_html)
-# content = site_html("table",{"class":"allvariant contentHold"})
-# # print((content))
-# print(len(content))
+content = site_html("table",{"class":"modelimage largearrow silderHolder"})
+print((content))
+print(len(content))
 # tbody = content[0].findAll('tbody')
 # # print(len(tbody))
 # # print(len(tr))
@@ -44,20 +45,20 @@ from bs4 import BeautifulSoup as bs
 # content = site_html.findAll("div",{"class":"pla-unit-container"})
 # print(content)
 
-amazon_url = "https://www.amazon.in/s?k=iphone12"
-r = requests.get(amazon_url)
-amazon_html = bs(r.content,"html5lib")
-# print(amazon_html.prettify())
-# content = amazon_html.findAll("h2",{"class":"a-size-mini a-spacing-none a-color-base s-line-clamp-2"})
-# content = amazon_html.findAll("span",{"class":"a-offscreen"})
-content = amazon_html.findAll("div",{"class":"sg-col-inner"})
-print(content)
-print(len(content))
+# amazon_url = "https://www.amazon.in/s?k=iphone12"
+# r = requests.get(amazon_url)
+# amazon_html = bs(r.content,"html5lib")
+# # print(amazon_html.prettify())
+# # content = amazon_html.findAll("h2",{"class":"a-size-mini a-spacing-none a-color-base s-line-clamp-2"})
+# # content = amazon_html.findAll("span",{"class":"a-offscreen"})
+# content = amazon_html.findAll("div",{"class":"sg-col-inner"})
+# print(content)
+# print(len(content))
 
 # del content[0]
 # print(len(content))
 
-lis = []
+# lis = []
 
 # for d in content:
 #     try :
