@@ -1,8 +1,5 @@
-from flask import Flask, render_template, request,jsonify
-from flask_cors import CORS,cross_origin
-import requests
-from bs4 import BeautifulSoup as bs
-from urllib.request import urlopen as uReq
+from flask import Flask
+from flask_cors import cross_origin
 import signup
 import signin
 import flipkart
