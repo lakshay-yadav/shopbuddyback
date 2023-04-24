@@ -16,6 +16,7 @@ def flipkart():
     lis = []
     for d in content:
         try:
+            link = "https://www.flipkart.com" + d.div.div.a['href']
             src = d.div.div.div.div.div.div.img['src']
             name = d.div.div.div.next_sibling.div.div.string
             rating = d.div.div.div.next_sibling.div.div.next_sibling.span.div.text
@@ -23,9 +24,13 @@ def flipkart():
         except:
             pass 
         
-        dict = {"price":price,"rating":rating,"name":name,"src":src}
+        dict = {"price":price,"rating":rating,"name":name,"src":src,"link":link}
         lis.append(dict)
     return (jsonify(lis))
 
 # if __name__ == '__main__':
 #     app.run(debug = True)
+
+
+# https://www.pricebefore.com/apple-iphone-12-black-64-gb-p537785.html
+# https://www.pricebefore.com/apple-iphone-13-midnight-128-gb-p637496.html

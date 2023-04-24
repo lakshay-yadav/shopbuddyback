@@ -1,2 +1,2 @@
-":
-    app.run(debug=True)
+
+print(len(content))

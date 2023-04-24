@@ -3,14 +3,52 @@ from flask_cors import CORS,cross_origin
 import requests
 from bs4 import BeautifulSoup as bs
 
+# searchString = request.json['searchString'].replace(" ","")
+# flipkart_url = "https://www.flipkart.com/search?q=" + searchString
+# r = requests.get(flipkart_url)
+# flipkart_html = bs(r.content,"html5lib")
+# content = flipkart_html.findAll("div",{"class":"_13oc-S"})
+
+# for d in content:
+#         try:
+#             src = d.div.div.div.div.div.div.img['src']
+#             name = d.div.div.div.next_sibling.div.div.string
+#             rating = d.div.div.div.next_sibling.div.div.next_sibling.span.div.text
+#             price = d.div.div.div.next_sibling.div.next_sibling.div.div.div.string
+#         except:
+#             pass 
+        
+        # dict = {"price":price,"rating":rating,"name":name,"src":src}
+        # lis.append(dict)
 
 site_url = "https://www.pricedekho.com/mobiles/apple-iphone-12-price.html"
 r = requests.get(site_url)
 site_html = bs(r.content,"html5lib")
-# # print(site_html)
-content = site_html("table",{"class":"modelimage largearrow silderHolder"})
-print((content))
+# print(site_html)
+# content = site_html.findAll("div",{"class":"specsRight"})
+content = site_html.findAll("section",{"class":"clearfix specsTable shadowWPadding marginBottom20"})
+print(content)
+
+# # for item in site_html.find_all('img'):
+# #     print(item['src'])
+
+# print(content)
 print(len(content))
+
+# image = content[0].li.div.img['src']
+# print(image)
+
+# print((content))
+# image_html = content[0]
+# print(image_html)
+# image_li = image_html("li")
+# print(image_li)
+# print(len(image_li))
+# print(len(content))
+
+
+
+
 # tbody = content[0].findAll('tbody')
 # # print(len(tbody))
 # # print(len(tr))
