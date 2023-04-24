@@ -3,6 +3,48 @@ from flask_cors import CORS,cross_origin
 import requests
 from bs4 import BeautifulSoup as bs
 
+
+link = "https://www.flipkart.com/apple-iphone-12-white-64-gb/p/itm8b88bdc03cd79?pid=MOBFWBYZTK33MBG9&lid=LSTMOBFWBYZTK33MBG9ZFJ0HL&marketplace=FLIPKART&q=iphone+12&store=tyy%2F4io&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=a809a717-c6d6-4b86-a8c4-fa08811c4d2a.MOBFWBYZTK33MBG9.SEARCH&ppt=hp&ppn=homepage&ssid=wisedho48g0000001682334743001&qH=7b7504afcaf2e1ea"
+newPage = requests.get(link)
+newPage_html = bs(newPage.content,"html5lib")
+category = newPage_html.findAll("div",{"class":"_3k-BhJ"})
+dic = {}
+count  = 1
+for d in category:
+    dic[count] = d.div.text
+    count = count+1
+
+print(dic)
+
+# content = newPage_html.findAll("table",{"class":"_14cfVK"})
+# # print(content)
+# # print(len(content))
+
+# lis = []
+
+# for d in content:
+#     newContent = d.findAll("tr",{"class":"_1s_Smc row"})
+#     # print(newContent)
+#     # print(len(newContent))
+
+#     dic = {}
+#     for n in newContent:
+#         try :
+#             keyName = n.td.text
+#             valueName = n.td.next_sibling.ul.li.text
+#             dic[keyName] = valueName
+#         except:
+#             pass
+
+#     lis.append(dic)
+
+# print(lis)
+
+
+
+
+
+
 # searchString = request.json['searchString'].replace(" ","")
 # flipkart_url = "https://www.flipkart.com/search?q=" + searchString
 # r = requests.get(flipkart_url)
@@ -21,19 +63,19 @@ from bs4 import BeautifulSoup as bs
         # dict = {"price":price,"rating":rating,"name":name,"src":src}
         # lis.append(dict)
 
-site_url = "https://www.pricedekho.com/mobiles/apple-iphone-12-price.html"
-r = requests.get(site_url)
-site_html = bs(r.content,"html5lib")
+# site_url = "https://www.pricedekho.com/mobiles/apple-iphone-12-price.html"
+# r = requests.get(site_url)
+# site_html = bs(r.content,"html5lib")
 # print(site_html)
 # content = site_html.findAll("div",{"class":"specsRight"})
-content = site_html.findAll("section",{"class":"clearfix specsTable shadowWPadding marginBottom20"})
-print(content)
+# content = site_html.findAll("div",{"class":"specsRight"})
+# print(content)
 
 # # for item in site_html.find_all('img'):
 # #     print(item['src'])
 
 # print(content)
-print(len(content))
+# print(len(content))
 
 # image = content[0].li.div.img['src']
 # print(image)

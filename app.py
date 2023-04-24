@@ -4,8 +4,20 @@ import signup
 import signin
 import flipkart
 import website
+import category
+import specs
 
 app = Flask(__name__)
+
+@app.route('/specs',methods=['POST'])
+@cross_origin()
+def specsscrap():
+    return specs.specs()
+
+@app.route('/category',methods=['POST'])
+@cross_origin()
+def categoryscrap():
+    return category.category()
 
 @app.route('/website',methods=['POST'])
 @cross_origin()
