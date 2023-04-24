@@ -4,17 +4,21 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 
-link = "https://www.flipkart.com/apple-iphone-12-white-64-gb/p/itm8b88bdc03cd79?pid=MOBFWBYZTK33MBG9&lid=LSTMOBFWBYZTK33MBG9ZFJ0HL&marketplace=FLIPKART&q=iphone+12&store=tyy%2F4io&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=a809a717-c6d6-4b86-a8c4-fa08811c4d2a.MOBFWBYZTK33MBG9.SEARCH&ppt=hp&ppn=homepage&ssid=wisedho48g0000001682334743001&qH=7b7504afcaf2e1ea"
-newPage = requests.get(link)
-newPage_html = bs(newPage.content,"html5lib")
-category = newPage_html.findAll("div",{"class":"_3k-BhJ"})
-dic = {}
-count  = 1
-for d in category:
-    dic[count] = d.div.text
-    count = count+1
+# link = "https://www.flipkart.com/apple-iphone-12-white-64-gb/p/itm8b88bdc03cd79?pid=MOBFWBYZTK33MBG9&lid=LSTMOBFWBYZTK33MBG9ZFJ0HL&marketplace=FLIPKART&q=iphone+12&store=tyy%2F4io&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=a809a717-c6d6-4b86-a8c4-fa08811c4d2a.MOBFWBYZTK33MBG9.SEARCH&ppt=hp&ppn=homepage&ssid=wisedho48g0000001682334743001&qH=7b7504afcaf2e1ea"
+# newPage = requests.get(link)
+# newPage_html = bs(newPage.content,"html5lib")
+# content = newPage_html.findAll("div",{"class":"_2a78PX"})
+# # print(content)
+# # print(len(content))
+# dic ={}
 
-print(dic)
+# for d in content:
+#     value = d.div.svg.text
+#     key = d.div.next_sibling.text
+#     dic[key] = value
+
+# print(dic)
+
 
 # content = newPage_html.findAll("table",{"class":"_14cfVK"})
 # # print(content)

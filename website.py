@@ -15,10 +15,7 @@ def website():
     r = requests.get(site_url)
     site_html = bs(r.content,"html5lib")
     content = site_html("table",{"class":"allvariant contentHold"})
-    specs = site_html.findAll("div",{"class":"specsRight"})
-    # dicSpecs = {"specs":str(specs[0]).replace("\\","")}
 
-    # print(str(specs[0]))
     tbody = content[0].findAll('tbody')
     tr = tbody[0].findAll('tr')
     
@@ -36,8 +33,6 @@ def website():
         dic = {"siteName":siteName,"price":price,"link":link}
         lis.append(dic)
     
-    # dicSpecs = json.dumps(dicSpecs)
-    # lis.append(dicSpecs)
     return jsonify(lis)
 
 if __name__ == "__main__":

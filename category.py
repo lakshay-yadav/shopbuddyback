@@ -21,14 +21,28 @@ def category():
     # print(content)
     # print(len(content))
     category = newPage_html.findAll("div",{"class":"_3k-BhJ"})
+    lis = []
+    
+    
+
     dic = {}
     count  = 1
     for d in category:
         dic[count] = d.div.text
         count = count+1
-    
-    lis = []
+
     lis.append(dic)
+
+    dic = {}
+
+    rating = newPage_html.findAll("div",{"class":"_2a78PX"})
+    for d in rating:
+        value = d.div.svg.text
+        key = d.div.next_sibling.text
+        dic[key] = value  
+
+    lis.append(dic)
+
     return jsonify(lis)
 
 

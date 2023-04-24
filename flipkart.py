@@ -23,11 +23,13 @@ def flipkart():
             name = d.div.div.div.next_sibling.div.div.string
             rating = d.div.div.div.next_sibling.div.div.next_sibling.span.div.text
             price = d.div.div.div.next_sibling.div.next_sibling.div.div.div.string
+            noofrating = d.div.div.div.next_sibling.div.div.next_sibling.span.next_sibling.span.span.text
+            noofreview = d.div.div.div.next_sibling.div.div.next_sibling.span.next_sibling.span.span.next_sibling.next_sibling.text
         
         except:
             pass 
         
-        dict = {"price":price,"rating":rating,"name":name,"src":src,"link":link}
+        dict = {"price":price,"rating":rating,"name":name,"src":src,"link":link,"noofrating":noofrating,"noofreview":noofreview}
         lis.append(dict)
 
     return (jsonify(lis))
