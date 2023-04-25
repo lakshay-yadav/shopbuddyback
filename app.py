@@ -6,8 +6,14 @@ import flipkart
 import website
 import category
 import specs
+import flipkartreviews
 
 app = Flask(__name__)
+
+@app.route('/flipkartreviews',methods=['POST'])
+@cross_origin()
+def flipkartreviewsscrap():
+    return flipkartreviews.flipkartreviews()
 
 @app.route('/specs',methods=['POST'])
 @cross_origin()

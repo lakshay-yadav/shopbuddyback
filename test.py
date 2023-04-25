@@ -7,9 +7,9 @@ from bs4 import BeautifulSoup as bs
 # link = "https://www.flipkart.com/apple-iphone-12-white-64-gb/p/itm8b88bdc03cd79?pid=MOBFWBYZTK33MBG9&lid=LSTMOBFWBYZTK33MBG9ZFJ0HL&marketplace=FLIPKART&q=iphone+12&store=tyy%2F4io&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=a809a717-c6d6-4b86-a8c4-fa08811c4d2a.MOBFWBYZTK33MBG9.SEARCH&ppt=hp&ppn=homepage&ssid=wisedho48g0000001682334743001&qH=7b7504afcaf2e1ea"
 # newPage = requests.get(link)
 # newPage_html = bs(newPage.content,"html5lib")
-# content = newPage_html.findAll("div",{"class":"_2a78PX"})
-# # print(content)
-# # print(len(content))
+# content = newPage_html.findAll("div",{"class":"_16PBlm"})
+# print(content)
+# print(len(content))
 # dic ={}
 
 # for d in content:
@@ -117,6 +117,7 @@ from bs4 import BeautifulSoup as bs
 # r = requests.get(site_url)
 # site_html = bs(r.content,"html5lib")
 # # print(site_html.prettify())
+
 # content = site_html.findAll("div",{"class","mui-style-1o0goxb"})
 # print(content)
 
@@ -126,6 +127,7 @@ from bs4 import BeautifulSoup as bs
 # r = requests.get(site_url)
 # site_html = bs(r.content,"html5lib")
 # # print(site_html.prettify())
+
 # content = site_html.findAll("div",{"class":"pla-unit-container"})
 # print(content)
 
@@ -133,9 +135,11 @@ from bs4 import BeautifulSoup as bs
 # r = requests.get(amazon_url)
 # amazon_html = bs(r.content,"html5lib")
 # # print(amazon_html.prettify())
+
 # # content = amazon_html.findAll("h2",{"class":"a-size-mini a-spacing-none a-color-base s-line-clamp-2"})
 # # content = amazon_html.findAll("span",{"class":"a-offscreen"})
 # content = amazon_html.findAll("div",{"class":"sg-col-inner"})
+
 # print(content)
 # print(len(content))
 
@@ -163,6 +167,7 @@ from bs4 import BeautifulSoup as bs
 # flipkart_html = bs(r.content,"html5lib")
 # # print(flipkart_html.prettify())
 # content = flipkart_html.findAll("div",{"class":"_13oc-S"})
+
 # lis = []
 # for d in content:
 #     try:
@@ -219,6 +224,7 @@ from bs4 import BeautifulSoup as bs
 # flipkartPage = uClient.read()
 # uClient.close()
 # flipkart_html = bs(flipkartPage, "html.parser")
+
 # print(len(flipkart_html.findAll("div")))
 # print(flipkart_html.prettify())
 # content = flipkart_html.find_all("div")
@@ -240,6 +246,7 @@ from bs4 import BeautifulSoup as bs
 # sitePage = uClient.read()
 # uClient.close()
 # site_html = bs(r.content,"html5lib")
+
 # print(site_html.prettify())
 # content = site_html.findAll("div",{"class":"sm-products list size-m img-long"})
 # print(len(content))
@@ -251,6 +258,7 @@ from bs4 import BeautifulSoup as bs
 # sitePage = uClient.read()
 # uClient.close()
 # site_html = bs(sitePage,"html.parser")
+
 # print(site_html.prettify())
 # content = site_html.findAll("div",{"class":"content_finder_grid"})
 # print(len(content))
@@ -263,8 +271,10 @@ from bs4 import BeautifulSoup as bs
 # uClient.close()
 # site_html = bs(sitePage,"html.parser")
 # print(site_html.prettify())
+
 # title = (site_html.title.string)
 # print(title)
+
 # content = site_html.findAll("div",{"class":"prodcut-listing"})
 # print(content[0].prettify())
 
@@ -276,13 +286,16 @@ from bs4 import BeautifulSoup as bs
 # sitePage = uClient.read()
 # print(sitePage)
 # uClient.close()
+
 # site_html = bs(sitePage, "html.parser")
 # print()
+
 # con = (site_html.findAll('a'))
 # con = site_html.findAll("div",{"class":"wtb-deal-list clearfix"})
 # con =  site_html.findAll("div")
 # print(con)
 # print(len(con))
+
 # n = site_html.find(id="wtb_deal_list")
 # print(n)
 # con = site_html.findAll("ul", {"id": "wheretobuy"})
