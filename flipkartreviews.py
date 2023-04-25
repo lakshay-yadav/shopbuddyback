@@ -33,8 +33,13 @@ def flipkartreviews():
 
         lis.append(dic)
     
-    return jsonify(lis)
+    link = "https://www.flipkart.com" + newPage_html.findAll("div",{"class":"col JOpGWq"})[0].a['href']
 
+    dic = {"link":link}
+
+    lis.append(dic)
+    
+    return jsonify(lis)
 
 # if __name__ == '__main__':
 #     app.run(debug = True)
