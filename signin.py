@@ -2,10 +2,10 @@ from flask import Flask, request,jsonify
 from flask_cors import cross_origin
 import pymongo
 import json
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route('/signin',methods=['POST'])
-@cross_origin()
+# @app.route('/signin',methods=['POST'])
+# @cross_origin()
 def signin():
     client = pymongo.MongoClient("mongodb://localhost:27017/")
     db = client['shopbuddy']
@@ -22,10 +22,9 @@ def signin():
      else:
            data = collection.find_one({'email':email})
            del data["_id"]
-        #   d = json.loads(json.dumps(data))
-        #    print(data)
+           print(data)
            return jsonify(data)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
