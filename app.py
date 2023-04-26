@@ -7,8 +7,14 @@ import website
 import category
 import specs
 import flipkartreviews
+import addtowishlist
 
 app = Flask(__name__)
+
+@app.route('/addtowishlist',methods=['POST'])
+@cross_origin()
+def addtowishlistroute():
+    return addtowishlist.addtowishlist()
 
 @app.route('/flipkartreviews',methods=['POST'])
 @cross_origin()
