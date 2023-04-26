@@ -44,3 +44,6 @@ def flipkartreviews():
 # if __name__ == '__main__':
 #     app.run(debug = True)
 
+# unDraw - illusration
+# lottiesfiles - animated 
+# pexels - photos
