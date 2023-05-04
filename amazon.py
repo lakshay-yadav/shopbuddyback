@@ -3,10 +3,10 @@ from flask_cors import CORS,cross_origin
 import requests
 from bs4 import BeautifulSoup as bs
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route('/amazon',methods=['POST'])
-@cross_origin()
+# @app.route('/amazon',methods=['POST'])
+# @cross_origin()
 def amazon():
     amazon_url = "https://www.amazon.in/s?k=iphone12"
     r = requests.get(amazon_url)
@@ -37,5 +37,5 @@ def amazon():
     return jsonify(lis)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
