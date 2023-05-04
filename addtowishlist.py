@@ -7,7 +7,7 @@ import pymongo
 # @app.route('/addtowishlist',methods=['POST'])
 # @cross_origin()
 def addtowishlist():
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
+    client = pymongo.MongoClient("mongodb+srv://tiwaryaakash00:a21815943289@cluster0.lgrv18e.mongodb.net/?retryWrites=true&w=majority")
     db = client['shopbuddy']
     collection = db['users']
     email = request.json['email']

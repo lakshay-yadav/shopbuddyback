@@ -7,7 +7,9 @@ import json
 # @app.route('/signin',methods=['POST'])
 # @cross_origin()
 def signin():
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
+    # mongodb://localhost:27017/
+    # 
+    client = pymongo.MongoClient("mongodb+srv://tiwaryaakash00:a21815943289@cluster0.lgrv18e.mongodb.net/?retryWrites=true&w=majority")
     db = client['shopbuddy']
     collection = db['users']
     email = request.json['email']

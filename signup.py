@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/signup',methods=['POST'])
 @cross_origin()
 def signup():
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
+    client = pymongo.MongoClient("mongodb+srv://tiwaryaakash00:a21815943289@cluster0.lgrv18e.mongodb.net/?retryWrites=true&w=majority")
     db = client['shopbuddy']
     collection = db['users']
     name = request.json['name']
